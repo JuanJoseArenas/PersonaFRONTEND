@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   paises: any;
   estados: any;
   persona: any;
-  title: any;
 
 
   constructor(
