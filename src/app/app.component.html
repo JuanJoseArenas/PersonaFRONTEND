@@ -1,11 +1,31 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="formulario-registro">
+  <h2>Crear Persona</h2>
+  <form [formGroup] = "personaForm" (ngSubmit) = "guardar()">
+      <div class = "form-group">
+          <label>Nombre</label>
+          <input type = "text" class = "form-control" formControlName = "nombre">
+      </div>
+      <div class = "form-group">
+          <label>Apellido</label>
+          <input type = "text" class = "form-control" formControlName = "apellido">
+      </div>
+      <div class = "form-group">
+          <label>Edad</label>
+          <input type = "number" class = "form-control" formControlName = "edad">
+      </div>
+      <div class = "form-group">
+          <label>Pais</label>
+          <select class = "form-control" formControlName = "pais" (change)="cargarEstadosPorPaisesId($event)">
+              <option [ngValue]="item" *ngFor="let item of paises">{{item.nombre}}</option>
+          </select>
+      </div>
+      <div class = "form-group">
+          <label>Estado o region</label>
+          <select class = "form-control" formControlName = "estado" class ="form - control" >
+              <option [ngValue]="item" *ngFor="let item of estados">{{item.nombre}}</option>
+          </select>
+      </div>
+      <button type = "submit" class = "btn btn-primary" [disabled]="personaForm.invalid">Guardar</button>
+  </form>
 
-<router-outlet></router-outlet>
-<button class="btn btn-danger">Prueba Boton</button>
-<h1>Hollaaa</h1>
+</div>
