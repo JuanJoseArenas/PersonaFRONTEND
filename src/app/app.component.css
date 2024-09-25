@@ -1,6 +1,10 @@
-.formularioRegistro {
-    box-sizing: border-box;
+.formulario-registro {
     padding-left: 30%;
     padding-right: 20%;
     margin-top: 10%;
-}
+  }
+  
+  
+  button {
+    margin-top: 10%;
+  }
